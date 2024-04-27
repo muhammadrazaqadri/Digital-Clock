@@ -1,0 +1,112 @@
+*{
+margin: 0px;
+padding: 0px;
+font-family: Arial, Helvetica, sans-serif;
+box-sizing: border-box;
+}
+
+body, .time, .left-side, .right-side, .right-top, .right-down, #date{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+body{
+    min-height: 80vh;
+    background-color: #000;
+}
+.gigital-clock, .time, .right-side, .right-top, .right-down, #date{
+    position: relative;
+}
+.gigital-clock{
+    color: #fff;
+    background-color: #00002c;
+    width: 450px;
+    padding: 20px 45px;
+    /* box-shadow: 0 5px 25px rgba(14, 21, 37, .8); */
+    border-radius: 10px;
+}
+
+.gigital-clock::before{
+    content: '';
+    position: absolute;
+    background: linear-gradient(45deg, #0000ff, #ffa500, #008000);
+    background-size: 200% 200%;
+    top: -5px;
+    bottom: -5px;
+    left: -5px;
+    right: -5px;
+    z-index: -1;
+    filter: blur(30px);
+    animation: glowing 5s ease infinite;
+}
+@keyframes glowing{
+    0%{
+        background-position: 0% 50%;
+    }
+    50%{
+        background-position: 100% 50%;
+    }
+    100%{
+        background-position: 0% 50%;
+    }
+}
+#hours{
+    font-weight: 600;
+    padding: 0 10px;
+    line-height: 125px;
+    font-size: 8em;
+    background: -webkit-linear-gradient(90deg, #ce228f, #fb8500, #fff);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+}
+.right-side{
+    flex-direction: column;
+    
+}
+#dost{
+    font-size: 4em;
+    transform: translateY(-3px);
+    color: #fff;
+    animation: blink 1s infinite;
+}
+@keyframes blink {
+    50% {
+        opacity: 0;
+    }
+}
+
+#minutes{
+    font-size: 5em;
+    font-weight: 500;
+    margin-left: 10px;
+    transform: translateY(10px);
+    background: -webkit-linear-gradient(90deg, #ce228f, #fb8500, #fff);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+}
+.right-down{
+    margin-left: 10px;
+    transform: translateY(-25px);
+}
+#period, #seconds{
+    font-size: 1.8em;
+    font-weight: 500;
+    margin-left: 10px;
+    margin-top: 5px;
+}
+#period{
+    /* color: #ffa500; */
+    background: -webkit-linear-gradient(90deg, #ce228f, #fb8500, #fff);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+}
+#seconds{
+    color: #fff;
+}
+#date{
+    background: -webkit-linear-gradient(90deg, #ce228f, #fb8500, #fff);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    font-size: large;
+    font-weight: 600;
+}
